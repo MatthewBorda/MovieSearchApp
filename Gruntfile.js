@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn',
-    buildcontrol: 'grunt-build-control'
+   buildcontrol: 'grunt-build-control'
   });
 
   // Configurable paths for the application
@@ -31,7 +31,9 @@ module.exports = function (grunt) {
 
     // Project settings
     yeoman: appConfig,
- buildcontrol: {
+    
+
+    buildcontrol: {
       options: {
         dir: 'dist',
         commit: true,
@@ -45,6 +47,7 @@ module.exports = function (grunt) {
         }
       }
     },
+    
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
