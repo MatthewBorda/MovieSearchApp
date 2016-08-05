@@ -1,4 +1,5 @@
-<div class="jumbotron" ng-controller="MainCtrl">
+<!-- Basic search -->
+ <div class="jumbotron" ng-controller="MainCtrl">
   <h1>Search for movies</h1>
   <p class="lead">
     <div ng-init="movieName='Seattle'">
@@ -8,19 +9,48 @@
           </label>
         </p>
        <p>
-         <h1>{{current.results[0].original_title}}</h1>
+          <h2>{{moviesFound.results[0].original_title}}</h2> 
+      <h2>{{moviesFound.total_results}}</h2> 
       </p> 
         <p>
-          <button class="btn btn-lg btn-primary" ng-click="refreshCurrent()">Search</button>
+          <button class="btn btn-lg btn-primary" ng-click="findMovies()">Search</button>
         </p>
       <dl>
         <dt>Synopsis</dt>
         <dd>{{current.results[0].overview}}</dd>
 
         <dt>Release Data</dt>
-        <dd>{{current.results[0].release_date}}</dd>
+        <dd>{{moviesearch.results[0].release_date}}</dd>
         <dt>The Movie Databe Average User Review:</dt>
         <dd>{{current.results[0].vote_average}} (out of 10) from {{current.results[0].vote_count}} users  </dl>
     </div>
   </p>
-</div>
+</div> 
+<!-- <div class="jumbotron" ng-controller="MainCtrl">
+ <h1>Select Your Movie</h1>
+  <p class="lead">
+    <div ng-init="movieName='Seattle'">
+        <p>
+          <H1>{{moviesearch.total_results}}
+            {{findMovies.results[0].overview}}
+          {{findMovies.total_results}}</H1>
+          <label for="movieName">Movie:
+            <input type="text" name="movieName" ng-model="movieName">
+          </label>
+        </p>
+        <p>
+          <button class="btn btn-lg btn-primary" ng-click="findMovies()">Find Movie</button>
+        </p>
+    </div>
+    <div ng-if="searchQuery">
+      <p class="lead">{{moviesFound.total_results}} cities found matching the query: {{searchQuery}}.</p>
+      <dl ng-repeat="original_title in moviesFound.list">
+        <dt>{{city.name}}, {{city.sys.country}}</dt>
+        <dd>{{city.weather[0].main}} - {{city.weather[0].description}}</dd>
+        <dt>Temperature</dt>
+        <dd>{{city.main.temp}} &deg;F</dd>
+        <dd><a ng-href="/#/current/{{city.id}}" class="btn btn-lg btn-primary">View Weather</a></dd>
+      </dl>
+    </div>
+  </p>
+</div> -->
