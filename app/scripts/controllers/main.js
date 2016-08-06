@@ -28,6 +28,6 @@ angular.module('workspaceApp')
         $scope.moviesFound = moviesearch.find({
             query: $scope.movieName
         });
-        $scope.searchQuery = $scope.query;
+        $scope.searchQuery = $scope.movieName;
     };
   });
