@@ -1,5 +1,17 @@
 <!-- Basic search -->
- <div class="jumbotron" ng-controller="MainCtrl">
+<div class ="container-fluid pageBody"  ng-controller="MainCtrl" 
+    >
+  
+
+ <div class="container searchBox" 
+
+      ng-style="{
+               'background-image':'url( http://image.tmdb.org/t/p/w1280' + moviesFound.results[0].poster_path +')'}" 
+      >
+<!--     ng-style="{
+               'background-image':'url( http://image.tmdb.org/t/p/w1280' + moviesFound.results[0].backdrop_path +')'}"  -->
+
+ 
   <h1>Search for movies</h1>
   <p class="lead">
     <div ng-init="movieName='Seattle'">
@@ -9,20 +21,41 @@
           </label>
         </p>
  
-     <p>
+
+
           <button class="btn btn-lg btn-primary" ng-click="findMovies()">Find Movie</button>
+ 
         </p>
     </div>
      </p>
-
+<div class = "container resultsOutput">
+ 
+<div class = "row " >
     <div ng-if="searchQuery" >
       <p class="lead">{{moviesFound.total_results}} movies found matching the query: {{searchQuery}}.</p>
-      <dl class="horizontal " ng-repeat="movies in moviesFound.results">
+       <div class = "row">
+        <p> {{moviesFound.results[0].original_title}}</p> 
+         <img img src="http://image.tmdb.org/t/p/w154/{{moviesFound.results[0].poster_path}}" alt="" >
+      </div>
+      <div class = "col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" ng-repeat="movies in moviesFound.results.slice(1,moviesFound.length)">
+   
+        <p>{{movies.original_title}}</p> 
+
+ <img img src="http://image.tmdb.org/t/p/w154/{{movies.poster_path}}" alt="poster image" >
+<!-- 
+       <dl  >
         <dt>Title </dt>
         <dd>{{movies.original_title}}</dd>
-        <dt>Synopsis</dt>
-        <dd>{{movies.overview}}</dd>
-        <dd><a ng-href="/#/current/{{city.id}}" class="btn btn-lg btn-primary">View Weather</a></dd>
-      </dl>
+        <dd><img src="http://image.tmdb.org/t/p/w154/{{movies.poster_path}}" alt="poster image" ></dd>
+           <dt>Synopsis</dt>
+        <dd>{{movies.overview}}</dd> 
+        <dd><a class="btn btn-lg btn-primary">Find Similar</a></dd>
+        <dd><a ng-href="#/sunburst/{{id}}" class="btn btn-lg btn-primary">Find Similar</a></dd>
+     
+        </dl>  --></div>
+                </div>
+          </div>
+      </div>
     </div>
 </div>
+ 

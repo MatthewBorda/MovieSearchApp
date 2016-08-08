@@ -31,6 +31,11 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/sunburst/:id', {
+        templateUrl: 'views/sunburst.html',
+        controller: 'SunburstCtrl',
+        controllerAs: 'sunburst'
+      })
       .otherwise({
         redirectTo: '/'
       });
