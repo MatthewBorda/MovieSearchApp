@@ -13,7 +13,7 @@ angular.module('workspaceApp')
     // ...
 
     // Public API here
-    return $resource('http://api.themoviedb.org/3/search/movie?api_key=0ee729f7a5162307774f1f09911d0b59&query=:query', {}, {
+    return $resource('http://api.themoviedb.org/3/search/movie?api_key=0ee729f7a5162307774f1f09911d0b59&query=:query&language=en&include_adult=false', {}, {
       find: {
         method:'GET',
         params:{
@@ -23,3 +23,5 @@ angular.module('workspaceApp')
       }
     });
   });
+
+// http://api.themoviedb.org/3/search/movie?api_key=0ee729f7a5162307774f1f09911d0b59&query=:query&language=en&include_adult=false
