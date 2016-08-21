@@ -31,7 +31,7 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/sunburst/:id', {
+      .when('/sunburst/:movieID', {
         templateUrl: 'views/sunburst.html',
         controller: 'SunburstCtrl',
         controllerAs: 'sunburst'

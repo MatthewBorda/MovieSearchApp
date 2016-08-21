@@ -9,9 +9,9 @@
  */
 angular.module('workspaceApp')
   .controller('SunburstCtrl', function ($scope, $routeParams, sunburst) {
-    $scope.id = $routeParams.id;
+    $scope.id = $routeParams.movieID;
 
     $scope.sunburstData = sunburst.query({
-        id: $routeParams.id
+        movieID: $routeParams.movieID
     });
   });

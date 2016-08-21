@@ -34,24 +34,15 @@
        <div class = "row results row-eq-height">
         <p> {{moviesFound.results[0].original_title}}</p> 
          <img img src="http://image.tmdb.org/t/p/w154/{{moviesFound.results[0].poster_path}}" alt="" >
-        <br> <a ng-href="#/sunburst/{{id}}" class="btn btn-lg btn-primary">Find Similar</a>
+        <br> <a ng-href="/#/sunburst/{{moviesFound.results[0].id}}" class="btn btn-lg btn-primary">Find Similar</a>
       </div>
       <div class = "results  clearfix col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" ng-repeat="movies in moviesFound.results.slice(1,moviesFound.length)">
    
         <p>{{movies.original_title}}</p> 
+      
         <img img src="http://image.tmdb.org/t/p/w154/{{movies.poster_path}}" alt="poster image" >
-        <br><a ng-href="#/sunburst/{{id}}" class="btn btn-lg btn-primary">Find Similar</a>
-<!-- 
-       <dl  >
-        <dt>Title </dt>
-        <dd>{{movies.original_title}}</dd>
-        <dd><img src="http://image.tmdb.org/t/p/w154/{{movies.poster_path}}" alt="poster image" ></dd>
-           <dt>Synopsis</dt>
-        <dd>{{movies.overview}}</dd> 
-        <dd><a class="btn btn-lg btn-primary">Find Similar</a></dd>
-        <dd><a ng-href="#/sunburst/{{id}}" class="btn btn-lg btn-primary">Find Similar</a></dd>
-     
-        </dl>  --></div>
+        <br><a ng-href="/#/sunburst/{{movies.id}}" class="btn btn-lg btn-primary">Find Similar</a>
+</div>
                 </div>
           </div>
       </div>
