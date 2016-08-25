@@ -1,45 +1,42 @@
-body {
-  background:rgba(0,0,0,0.5);
-  color:white;
-  margin:0
-}
-
-.searchBox  {
-
-
-   background-clip: initial;
-     background-repeat: no-repeat;
-    background-attachment: fixed;
-   background-position: center top;
-    margin-left:auto;
-   margin-right:auto;
-   display:center;
-   text-align:center;
-
-}
-
-
-/* Take out media calls */
-
-.group {
-  display: inline-block;
-}
-
-
-#searchText{
-  color:black;
-}
-
-.results {
-   margin-left:auto;
-   margin-right:auto;
-   display:center;
-   text-align:center;
-
-}
-
-.results p {
-   background:rgba(0,0,0,0.5);
-}
 
 // in case your dealing with a inline element apply this to the parent 
+/*  */
+body,html {
+  height: 100%;
+  background:#222;
+}
+
+
+.mainBody {
+  margin:0;
+}
+.wide {
+  width:100%;
+  height:100%;
+  height:calc(100% - 1px);
+  min-height:1000px
+  background-size:cover;
+}
+
+.wide url {
+  width:100%;
+}
+
+.navbar {
+  margin:0;
+  width:100%
+}
+.primaryText {
+  color:#fff;
+  font-weight:800;
+  font-size:14pt;
+  padding:25px;
+  text-align:left ;
+}
+
+.gridResults {
+  width:92px;
+  height:138px;
+  padding:0;
+  margin:0;
+}

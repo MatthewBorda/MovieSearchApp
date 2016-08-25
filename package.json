@@ -44,6 +44,8 @@
     "test": "karma start test/karma.conf.js"
   },
   "dependencies": {
-    "angular-bootstrap-lightbox": "^0.12.0"
+    "angular-bootstrap-lightbox": "^0.12.0",
+    "dev": "^0.1.3",
+    "easyjson": "^0.1.2"
   }
 }

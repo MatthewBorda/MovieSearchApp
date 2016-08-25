@@ -1,0 +1,86 @@
+<div class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="#">Movie Finder</a>
+    </div>
+   
+  </div>
+</div>
+
+<div ng-if="movielookupData">
+        <div class="wide container" ng-style="{'background-image':' url( http://image.tmdb.org/t/p/original' + movielookupData.images.backdrops[1].file_path +')'}">
+          <div class="row">
+            <h2 class="primaryText"> {{movielookupData.original_title}}</h2>
+          </div>
+          <div class="row">
+            <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <p class="primaryText"> {{movielookupData.tagline}}</p>
+         </div> <!--Overview end -->
+            
+            <div class="row col-xs-12 col-sm-12 col-md-2 col-md-offset-6 col-lg-2 col-lg-offset-6 col-xl-2 col-lg-offset-6">
+              <img img src="http://image.tmdb.org/t/p/w154/{{movielookupData.poster_path}}" alt="{{moviesFound.results[0].original_title}}">
+     
+            </div>
+          </div>
+        </div>
+
+<!--   put sections here -->
+<div class="container searchContainer">
+
+    <div class="row categories col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <ul>Trailer</ul>
+      <ul>Cast</ul>
+      <ul>Crew</ul>
+      <ul>Genres</ul>
+      <ul>Keywords</ul>
+      <ul>Similar</ul>
+    </div>
+    
+  </div>
+  </div>
+  <h1>Genres</h1>
+
+ <div ng-if="movielookupData" >
+
+   
+<div class = "results"  ng-repeat="generesFound in movielookupData.genres">
+
+<p>{{generesFound.name}}</p> 
+</div>
+</div>   
+<h1>Cast</h1>
+ <div ng-if="movielookupData" >
+<div class = "results"  ng-repeat="castFound in movielookupData.credits.cast">
+
+  <p>{{castFound.name}}</p> 
+</div>
+</div>  
+<h1>Crew</h1>
+ <div ng-if="movielookupData" >
+<div class = "results"  ng-repeat="castFound in movielookupData.credits.crew">
+
+  <p>{{castFound.name}}</p> 
+</div>
+</div> 
+ 
+<h1>Keywords</h1>
+ <div ng-if="movielookupData" >
+<div class = "results"  ng-repeat="keywordsFound in movielookupData.keywords.keywords">
+
+  <p>{{keywordsFound.name}}</p> 
+</div>
+</div> 
+
+<h1>Similar results</h1>
+ <div ng-if="movielookupData" >
+<div class = "results"  ng-repeat="similarFound in movielookupData.similar.results">
+
+  <p>{{similarFound.original_title}}</p> 
+</div>
+</div> 
+
+
+<!--Leave it all in one call and let the user include / exclude generes/keywords/cast/other (defualt just being generes). Leave sunburst on this page and have it update automatically as selections are made  -->
+
+

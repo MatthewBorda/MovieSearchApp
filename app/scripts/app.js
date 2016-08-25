@@ -31,7 +31,12 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/sunburst/:movieID', {
+      .when('/movielookup/:movielookupID', {
+        templateUrl: 'views/movielookup.html',
+        controller: 'MovielookupCtrl',
+        controllerAs: 'movielookup'
+      })
+       .when('/sunburst/:movieID', {
         templateUrl: 'views/sunburst.html',
         controller: 'SunburstCtrl',
         controllerAs: 'sunburst'
