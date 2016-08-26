@@ -24,4 +24,3 @@ angular.module('workspaceApp')
     });
   });
 
-// http://api.themoviedb.org/3/search/movie?api_key=0ee729f7a5162307774f1f09911d0b59&query=:query&language=en&include_adult=false

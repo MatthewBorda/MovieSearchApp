@@ -1,5 +1,6 @@
 <div class="navbar navbar-inverse">
   <div class="container">
+      <!--Overview end -->
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Movie Finder</a>
     </div>
@@ -14,7 +15,6 @@
       <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
         <p class="primaryText"> {{movielookupData.tagline}}</p>
       </div>
-      <!--Overview end -->
 
       <div class="row col-xs-12 col-sm-12 col-md-2 col-md-offset-6 col-lg-2 col-lg-offset-6 col-xl-2 col-lg-offset-6">
         <img img src="http://image.tmdb.org/t/p/w154/{{movielookupData.poster_path}}" alt="{{moviesFound.results[0].original_title}}">
@@ -22,9 +22,10 @@
       </div>
     </div>
   </div>
-  <div ng-if="movielookupData">
+ 
 
-    <!--   put sections here -->
+     <div>
+
     <div class="container searchContainer">
 
       <div class="row categories col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -42,7 +43,7 @@
             <div class=" row gridOutputResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
 
               <p>{{castFound.character}}: {{castFound.name}}</p>
-              <a ng-href="/#/!!!!/{{castFound.id}}"> <img src="http://image.tmdb.org/t/p/w185/{{castFound.profile_path}}" alt=" {{castFound.name}}"></a>
+              <a ng-href=""> <img src="http://image.tmdb.org/t/p/w185/{{castFound.profile_path}}" alt=" {{castFound.name}}"></a>
             </div>
           </div>
         </div>
@@ -54,7 +55,7 @@
         <div ng-repeat="crewFound in movielookupData.credits.crew  | filter:{profile_path:''}">
           <div class="row gridOutputResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
 
-            <a ng-href="/#/!!!!/{{crewFound.id}}"> <img src="http://image.tmdb.org/t/p/w185/{{crewFound.profile_path}}" alt=" {{crewFound.name}}"></a>
+            <a ng-href=""> <img src="http://image.tmdb.org/t/p/w185/{{crewFound.profile_path}}" alt=" {{crewFound.name}}"></a>
             <p>{{crewFound.job}}: {{crewFound.name}}</p>
           </div>
         </div>
@@ -72,7 +73,7 @@
       </div>
     </div>
     <div class="form-group" ng-show="show==4">
-      <h1>Keywords</h1>
+      <h1>Keywords</h1> 
       <div class="container">
         <div ng-repeat="keywordsFound in movielookupData.keywords.keywords">
           <div class="row gridTextResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
@@ -87,10 +88,12 @@
       <div class="container">
         <div ng-repeat="similarFound in movielookupData.similar.results  | filter:{poster_path:''}">
           <div class="row row-centered gridOutputResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
-            <a ng-href="/#/!!!!/{{similarFound.id}}"> <img src="http://image.tmdb.org/t/p/w185/{{similarFound.poster_path}}" alt=" {{similarFound.name}}"></a>
+            <a ng-href=""> <img src="http://image.tmdb.org/t/p/w185/{{similarFound.poster_path}}" alt=" {{similarFound.name}}"></a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+      </div>
+ 
