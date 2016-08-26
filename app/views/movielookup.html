@@ -1,31 +1,66 @@
 <div class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-
       <a class="navbar-brand" href="#">Movie Finder</a>
     </div>
-   
   </div>
 </div>
-
 <div ng-if="movielookupData">
-        <div class="wide container" ng-style="{'background-image':' url( http://image.tmdb.org/t/p/original' + movielookupData.images.backdrops[1].file_path +')'}">
-          <div class="row">
-            <h2 class="primaryText"> {{movielookupData.original_title}}</h2>
-          </div>
-          <div class="row">
-            <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-              <p class="primaryText"> {{movielookupData.tagline}}</p>
-         </div> <!--Overview end -->
-            
-            <div class="row col-xs-12 col-sm-12 col-md-2 col-md-offset-6 col-lg-2 col-lg-offset-6 col-xl-2 col-lg-offset-6">
-              <img img src="http://image.tmdb.org/t/p/w154/{{movielookupData.poster_path}}" alt="{{moviesFound.results[0].original_title}}">
-     
+  <div class="wide container" ng-style="{'background-image':' url( http://image.tmdb.org/t/p/original' + movielookupData.images.backdrops[2].file_path +')'}">
+    <div class="row">
+      <h2 class="primaryText"> {{movielookupData.original_title}}</h2>
+    </div>
+    <div class="row">
+      <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <p class="primaryText"> {{movielookupData.tagline}}</p>
+      </div>
+      <!--Overview end -->
+
+      <div class="row col-xs-12 col-sm-12 col-md-2 col-md-offset-6 col-lg-2 col-lg-offset-6 col-xl-2 col-lg-offset-6">
+        <img img src="http://image.tmdb.org/t/p/w154/{{movielookupData.poster_path}}" alt="{{moviesFound.results[0].original_title}}">
+
+      </div>
+    </div>
+  </div>
+  <div ng-if="movielookupData">
+
+    <!--   put sections here -->
+    <div class="container searchContainer">
+
+      <div class="row categories col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <button ng-click="show =1">Cast</button>
+        <button ng-click="show =2">Crew</button>
+        <button ng-click="show =3">Genres</button>
+        <button ng-click="show =4">Keywords</button>
+        <button ng-click="show =5">Similar</button>
+
+      </div>
+      <div class="form-group" ng-show="show==1">
+        <h1>Cast</h1>
+        <div class="container">
+          <div ng-repeat="castFound in movielookupData.credits.cast | filter:{profile_path:''}">
+            <div class=" row gridOutputResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+
+              <p>{{castFound.character}}: {{castFound.name}}</p>
+              <a ng-href="/#/!!!!/{{castFound.id}}"> <img src="http://image.tmdb.org/t/p/w185/{{castFound.profile_path}}" alt=" {{castFound.name}}"></a>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="form-group" ng-show="show==2">
+      <h1>Crew</h1>
+      <div class="container">
+        <div ng-repeat="crewFound in movielookupData.credits.crew  | filter:{profile_path:''}">
+          <div class="row gridOutputResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
 
-<<<<<<< HEAD
+            <a ng-href="/#/!!!!/{{crewFound.id}}"> <img src="http://image.tmdb.org/t/p/w185/{{crewFound.profile_path}}" alt=" {{crewFound.name}}"></a>
+            <p>{{crewFound.job}}: {{crewFound.name}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="form-group" ng-show="show==3">
       <h1>Genres</h1>
       <div class="container">
@@ -37,68 +72,25 @@
       </div>
     </div>
     <div class="form-group" ng-show="show==4">
-      <h1>Keywords</h1> SHIT
+      <h1>Keywords</h1> 
       <div class="container">
         <div ng-repeat="keywordsFound in movielookupData.keywords.keywords">
           <div class="row gridTextResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
-=======
-<!--   put sections here -->
-<div class="container searchContainer">
->>>>>>> parent of 0d34837... end of day commit
 
-    <div class="row categories col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-      <ul>Trailer</ul>
-      <ul>Cast</ul>
-      <ul>Crew</ul>
-      <ul>Genres</ul>
-      <ul>Keywords</ul>
-      <ul>Similar</ul>
+            <button type="button" class="btn btn-outline-secondary">{{keywordsFound.name}}</button>
+          </div>
+        </div>
+      </div>
     </div>
-    
+    <div class="form-group" ng-show="show==5">
+      <h1>Similar results</h1>
+      <div class="container">
+        <div ng-repeat="similarFound in movielookupData.similar.results  | filter:{poster_path:''}">
+          <div class="row row-centered gridOutputResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+            <a ng-href="/#/!!!!/{{similarFound.id}}"> <img src="http://image.tmdb.org/t/p/w185/{{similarFound.poster_path}}" alt=" {{similarFound.name}}"></a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
-  <h1>Genres</h1>
-
- <div ng-if="movielookupData" >
-
-   
-<div class = "results"  ng-repeat="generesFound in movielookupData.genres">
-
-<p>{{generesFound.name}}</p> 
 </div>
-</div>   
-<h1>Cast</h1>
- <div ng-if="movielookupData" >
-<div class = "results"  ng-repeat="castFound in movielookupData.credits.cast">
-
-  <p>{{castFound.name}}</p> 
-</div>
-</div>  
-<h1>Crew</h1>
- <div ng-if="movielookupData" >
-<div class = "results"  ng-repeat="castFound in movielookupData.credits.crew">
-
-  <p>{{castFound.name}}</p> 
-</div>
-</div> 
- 
-<h1>Keywords</h1>
- <div ng-if="movielookupData" >
-<div class = "results"  ng-repeat="keywordsFound in movielookupData.keywords.keywords">
-
-  <p>{{keywordsFound.name}}</p> 
-</div>
-</div> 
-
-<h1>Similar results</h1>
- <div ng-if="movielookupData" >
-<div class = "results"  ng-repeat="similarFound in movielookupData.similar.results">
-
-  <p>{{similarFound.original_title}}</p> 
-</div>
-</div> 
-
-
-<!--Leave it all in one call and let the user include / exclude generes/keywords/cast/other (defualt just being generes). Leave sunburst on this page and have it update automatically as selections are made  -->
-
-
