@@ -8,7 +8,7 @@
  * Factory in the workspaceApp.
  */
 angular.module('workspaceApp')
-    .factory('current', function ($resource) {
+    .factory('current', function ($resource)  {
     // Service logic
     // ...
 
