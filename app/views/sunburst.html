@@ -1,0 +1,45 @@
+<h1>{{sunburstData.original_title}} </h1>
+
+<h1>Generes</h1>
+
+ <div ng-if="sunburstData" >
+
+   
+<div class = "results"  ng-repeat="generesFound in sunburstData.genres">
+
+<p>{{generesFound.name}}</p> 
+</div>
+</div>   
+<h1>Cast</h1>
+ <div ng-if="sunburstData" >
+<div class = "results"  ng-repeat="castFound in sunburstData.credits.cast">
+
+  <p>{{castFound.name}}</p> 
+</div>
+</div>  
+<h1>Crew</h1>
+ <div ng-if="sunburstData" >
+<div class = "results"  ng-repeat="castFound in sunburstData.credits.crew">
+
+  <p>{{castFound.name}}</p> 
+</div>
+</div> 
+ 
+<h1>Keywords</h1>
+ <div ng-if="sunburstData" >
+<div class = "results"  ng-repeat="keywordsFound in sunburstData.keywords.keywords">
+
+  <p>{{keywordsFound.name}}</p> 
+</div>
+</div> 
+
+<h1>Similar results</h1>
+ <div ng-if="sunburstData" >
+<div class = "results"  ng-repeat="similarFound in sunburstData.similar.results">
+
+  <p>{{similarFound.original_title}}</p> 
+</div>
+</div> 
+
+
+<!--Leave it all in one call and let the user include / exclude generes/keywords/cast/other (defualt just being generes). Leave sunburst on this page and have it update automatically as selections are made  -->

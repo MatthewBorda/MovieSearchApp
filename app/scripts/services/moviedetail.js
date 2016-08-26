@@ -16,7 +16,7 @@ angular.module('workspaceApp')
       find: {
         method:'GET',
         params:{
-          query: 'Seattle'
+          query: ''
         },
         isArray:false
       }
