@@ -24,7 +24,7 @@
 
             <div class="row col-xs-12 col-sm-12 col-md-2 col-md-offset-6 col-lg-2 col-lg-offset-6 col-xl-2 col-lg-offset-6">
               <img img src="http://image.tmdb.org/t/p/w154/{{genreslookupData.results[0].poster_path}}" alt="{{genreslookupData.results[0].original_title}}">
-              <br> <a ng-href="/#/movielookup/{{genreslookupData.results[0].id}}" class="btn btn-custom btn-lg btn-block">Find Similar</a>
+              <br> <a ng-href="#/movielookup/{{genreslookupData.results[0].id}}" class="btn btn-custom btn-lg btn-block">Find Similar</a>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
           <div class="container secondaryResults">
             <div ng-repeat="movies in genreslookupData.results |limitTo:19:1 | filter:{poster_path:''}">
               <div class=" row gridResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
-                <a ng-href="/#/movielookup/{{movies.id}}"> <img src="http://image.tmdb.org/t/p/w92/{{movies.poster_path}}" alt=" {{movies.original_title}}"></a>
+                <a ng-href="#/movielookup/{{movies.id}}"> <img src="http://image.tmdb.org/t/p/w92/{{movies.poster_path}}" alt=" {{movies.original_title}}"></a>
               </div>
             </div>
           </div>

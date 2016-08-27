@@ -54,7 +54,7 @@
             <div class=" row gridOutputResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
 
               <p>{{castFound.character}}: {{castFound.name}}</p>
-              <a ng-href="/#/cast/{{castFound.id}}"> <img src="http://image.tmdb.org/t/p/w185/{{castFound.profile_path}}" alt=" {{castFound.name}}"></a>
+              <a ng-href="#/cast/{{castFound.id}}"> <img src="http://image.tmdb.org/t/p/w185/{{castFound.profile_path}}" alt=" {{castFound.name}}"></a>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@
         <div ng-repeat="crewFound in movielookupData.credits.crew  | filter:{profile_path:''}">
           <div class="row gridOutputResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
 
-            <a ng-href="/#/crew/{{crewFound.id}}"> <img src="http://image.tmdb.org/t/p/w185/{{crewFound.profile_path}}" alt=" {{crewFound.name}}"></a>
+            <a ng-href="#/crew/{{crewFound.id}}"> <img src="http://image.tmdb.org/t/p/w185/{{crewFound.profile_path}}" alt=" {{crewFound.name}}"></a>
             <p>{{crewFound.job}}: {{crewFound.name}}</p>
           </div>
         </div>
@@ -79,7 +79,7 @@
         <div ng-repeat="genresFound in movielookupData.genres">
           <div class="row gridTextResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
            
-            <a href=" /#/genres/{{genresFound.id}}" role="button" type="button" class="btn btn-custom btn-sm btn-block ">{{genresFound.name}} </a>
+            <a href=" #/genres/{{genresFound.id}}" role="button" type="button" class="btn btn-custom btn-sm btn-block ">{{genresFound.name}} </a>
             
           </div>
         </div>
@@ -91,7 +91,7 @@
         <div ng-repeat="keywordsFound in movielookupData.keywords.keywords">
           <div class="row gridTextResults col-xs-12 col-sm-2 col-md-2 col-lg-2 col-xl-2">
 
-           <a href="/#/keywords/{{keywordsFound.id}}" role="button" type="button" class="btn btn-custom btn-sm btn-block ">{{keywordsFound.name}}</a>
+           <a href="#/keywords/{{keywordsFound.id}}" role="button" type="button" class="btn btn-custom btn-sm btn-block ">{{keywordsFound.name}}</a>
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@
       <div class="container">
         <div ng-repeat="similarFound in movielookupData.similar.results  | filter:{poster_path:''}">
           <div class="row row-centered gridOutputResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
-            <a ng-href="/#/similar/{{similarFound.id}}"> <img src="http://image.tmdb.org/t/p/w185/{{similarFound.poster_path}}" alt=" {{similarFound.name}}"></a>
+            <a ng-href="#/similar/{{similarFound.id}}"> <img src="http://image.tmdb.org/t/p/w185/{{similarFound.poster_path}}" alt=" {{similarFound.name}}"></a>
           </div>
         </div>
       </div>
