@@ -1,0 +1,40 @@
+body,html {
+  height: 100%;
+  background:#222;
+  width:100%;
+}
+
+
+
+
+.mainBody {
+  margin-right: 0;
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 0; }
+  .container:before, .container:after {
+    content: " ";
+    display: table; }
+  .container:after {
+    clear: both; }
+  @media (min-width: 768px) {
+    .container {
+     width: 100%; } }
+  @media (min-width: 992px) {
+    .container {
+      width: 100%; } }
+  @media (min-width: 1200px) {
+    .container {
+      width: 100%;
+      } }
+
+   .tooltip {
+        border: 1px solid black;
+        width: 230px;
+        margin-left: 58px;
+        margin-top: -35px;
+        background-color: darkcyan;
+        border-radius: 4px;
+        height: 20px;
+        color: white;
+    }

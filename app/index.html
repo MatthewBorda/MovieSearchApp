@@ -1,86 +1,108 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
 
-<!--     <script src="bower_components/angular/angular.js"></script> -->
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
 
- <!-- or use another assembly -->
+  <!--     <script src="bower_components/angular/angular.js"></script> -->
+
+  <!-- or use another assembly -->
 
 
-    <!-- endbuild -->
-  </head>
-  <body ng-app="workspaceApp" class="mainBody">
-    <!--[if lte IE 8]>
+  <!-- endbuild -->
+</head>
+
+<body ng-app="workspaceApp" class="mainBody">
+  <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
+  <!-- Add your site or application content here -->
 
 
 
-    <div class="container mainBody">
+  <div class="container mainBody">
     <div ng-view=""></div>
+  </div>
+
+  <div class="footer mainBody">
+    <div class="container">
+
+      <a href="http://www.themoviedb.org">
+
+        <img alt="Powered By TMDb.org" src="images/var_5_0_tmdb-logo-1Line-GreenGradient-Bree.png" width="300" height="50"></a>
+      <p>This product uses the TMDb API but is not endorsed or certified by TMDb.
+      </p>
+
     </div>
-
-    <div class="footer mainBody">
-      <div class="container">
-      
-      </div>
-    </div>
+  </div>
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+  <script>
+    ! function(A, n, g, u, l, a, r) {
+      A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+          (A[l].q = A[l].q || []).push(arguments)
+        }, A[l].l = +new Date, a = n.createElement(g),
+        r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+  </script>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-background/dist/angular-background.min.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-background/dist/angular-background.min.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/services/current.js"></script>
-        <script src="scripts/services/moviesearch.js"></script>
-        <script src="scripts/controllers/sunburst.js"></script>
-        <script src="scripts/services/sunburst.js"></script>
-        <script src="scripts/services/sunburstchart.js"></script>
-        <script src="scripts/services/movielookup.js"></script>
-        <script src="scripts/controllers/movielookup.js"></script>
-        <script src="scripts/services/moviedetail.js"></script>
-        <!-- endbuild -->
-    
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/about.js"></script>
+  <script src="scripts/services/current.js"></script>
+  <script src="scripts/services/moviesearch.js"></script>
+  <script src="scripts/controllers/sunburst.js"></script>
+  <script src="scripts/services/sunburst.js"></script>
+  <script src="scripts/services/sunburstchart.js"></script>
+  <script src="scripts/services/movielookup.js"></script>
+  <script src="scripts/controllers/movielookup.js"></script>
+  <script src="scripts/services/moviedetail.js"></script>
+  <script src="scripts/services/cast.js"></script>
+  <script src="scripts/controllers/cast.js"></script>
+  <script src="scripts/services/crew.js"></script>
+  <script src="scripts/services/genres.js"></script>
+  <script src="scripts/services/keywords.js"></script>
+  <script src="scripts/services/similar.js"></script>
+  <script src="scripts/controllers/crew.js"></script>
+  <script src="scripts/controllers/genres.js"></script>
+  <script src="scripts/controllers/keywords.js"></script>
+  <script src="scripts/controllers/similar.js"></script>
+  <!-- endbuild -->
+
 </body>
+
 </html>

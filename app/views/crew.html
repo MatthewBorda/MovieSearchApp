@@ -1,0 +1,44 @@
+  <div class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+
+        <a class="navbar-brand" href="#">The Movie Suggestor</a>
+<!--         <button class="btn btn-default btn-search" ng-click="show=1"><i class="glyphicon glyphicon-question-sign"></i></button> -->
+      </div>
+          </div>
+  </div>
+  <!--  -->
+ <div class="container resultsOutput">
+  
+    <div class="container">
+      <div ng-if="crewlookupData"></div>
+        <div class="wide container" ng-style="{'background-image':' url( http://image.tmdb.org/t/p/original' + crewlookupData.results[0].backdrop_path +')'}">
+          <div class="row">
+            <h2 class="overlayText"> {{crewlookupData.results[0].original_title}}</h2>
+          </div>
+          <div class="row overlayDetails">
+            <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <p class="overlayDetailText"> {{crewlookupData.results[0].overview}}</p>
+            </div>
+            <!--Overview end -->
+
+            <div class="row col-xs-12 col-sm-12 col-md-2 col-md-offset-6 col-lg-2 col-lg-offset-6 col-xl-2 col-lg-offset-6">
+              <img img src="http://image.tmdb.org/t/p/w154/{{crewlookupData.results[0].poster_path}}" alt="{{crewlookupData.results[0].original_title}}">
+              <br> <a ng-href="/#/movielookup/{{crewlookupData.results[0].id}}" class="btn btn-custom btn-lg btn-block">Find Similar</a>
+            </div>
+          </div>
+        </div>
+        <div class="altGrid">
+
+          <h1 class="gridHeader">Not it? Try one of these</h1>
+          <div class="container secondaryResults">
+            <div ng-repeat="movies in crewlookupData.results |limitTo:19:1 | filter:{poster_path:''}">
+              <div class=" row gridResults col-xs-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+                <a ng-href="/#/movielookup/{{movies.id}}"> <img src="http://image.tmdb.org/t/p/w92/{{movies.poster_path}}" alt=" {{movies.original_title}}"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,14 +1,12 @@
-
-// in case your dealing with a inline element apply this to the parent 
-/*  */
-body,html {
-  height: 100%;
-  background:#222;
+.instructions{
+   color:white;
+  text-align:center;
+   list-style-type: none;
 }
 
+.instructions ul{
 
-.mainBody {
-  margin:0;
+   list-style: none;
 }
 .wide {
   width:100%;

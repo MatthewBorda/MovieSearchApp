@@ -41,6 +41,31 @@ angular
         controller: 'SunburstCtrl',
         controllerAs: 'sunburst'
       })
+      .when('/cast/:castlookupID', {
+        templateUrl: 'views/cast.html',
+        controller: 'CastCtrl',
+        controllerAs: 'cast'
+      })
+      .when('/crew/:crewlookupID', {
+        templateUrl: 'views/crew.html',
+        controller: 'CrewCtrl',
+        controllerAs: 'crew'
+      })
+      .when('/genres/:genreslookupID', {
+        templateUrl: 'views/genres.html',
+        controller: 'GenresCtrl',
+        controllerAs: 'genres'
+      })
+      .when('/keywords/:keywordslookupID', {
+        templateUrl: 'views/keywords.html',
+        controller: 'KeywordsCtrl',
+        controllerAs: 'keywords'
+      })
+      .when('/similar/:similarlookupID', {
+        templateUrl: 'views/similar.html',
+        controller: 'SimilarCtrl',
+        controllerAs: 'similar'
+      })
       .otherwise({
         redirectTo: '/'
       });
